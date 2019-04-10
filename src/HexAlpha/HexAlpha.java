@@ -12,8 +12,7 @@ public class HexAlpha extends Application {
 
   @Override
   public void start(Stage primaryStage) {
-    Controller.setStage(primaryStage);
-    Controller.setup();
+    Controller.setup(primaryStage);
     Controller.changeToSplash();
   }
 }
