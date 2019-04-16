@@ -1,5 +1,7 @@
 package hexalpha.engine;
-
+/**
+* Describes Pieces and Game Modes avaliable to game.
+*/
 public enum Hex {
   EMPTY,
   RED,
