@@ -1,6 +1,7 @@
 package hexalpha.controller.game;
 
 import hexalpha.engine.Game;
+import hexalpha.controller.Controller;
 import hexalpha.engine.Hex;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
@@ -27,10 +28,13 @@ public class GameController {
       String[] piece = source.split("_");
       int y = Integer.parseInt(piece[1]);
       int x = Integer.parseInt(piece[2]);
-      if (game.isValidMove(x, y) && game.isComplete() == false) {
+      if (game.isValidMove(x, y)) {
         Hex player = game.currentPlayer();
         game.move(x, y, player);
         changePiece(player, imageView);
+        if (game.isComplete()) {
+          Controller.changeToWinner(game.getWinner());
+        }
       }
     }
 

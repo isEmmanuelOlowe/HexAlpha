@@ -8,6 +8,7 @@ import java.io.IOException;
 import javafx.scene.image.Image;
 import hexalpha.controller.splash.SplashController;
 import hexalpha.controller.game.GameController;
+import hexalpha.controller.winner.WinnerController;
 import hexalpha.engine.Hex;
 
 /**
@@ -58,6 +59,21 @@ public class Controller {
       Parent root = loader.load();
       GameController gameController = (GameController) loader.getController();
       gameController.initialize(gameType);
+      //creates a new scene and displays it to the user.
+      stage.setScene(new Scene(root));
+      stage.show();
+    }
+    catch (IOException e) {
+      System.out.println("FXML file is missing");
+    }
+  }
+
+  public static void changeToWinner(Hex winner) {
+    try {
+      FXMLLoader loader = new FXMLLoader(WinnerController.class.getResource("winner.fxml"));
+      Parent root = loader.load();
+      WinnerController winnerController = (WinnerController) loader.getController();
+      winnerController.initialize(winner);
       //creates a new scene and displays it to the user.
       stage.setScene(new Scene(root));
       stage.show();
