@@ -10,5 +10,9 @@ function build() {
 }
 
 
+build hexalpha/
 build hexalpha/controller/
 build hexalpha/controller/splash/
+build hexalpha/controller/game/
+build hexalpha/controller/winner/
+build hexalpha/engine/
