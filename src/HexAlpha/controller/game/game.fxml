@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hexalpha.controller.splash.SplashController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hexalpha.controller.game.GameController">
    <top>
       <HBox fillHeight="false" prefWidth="600.0" style="-fx-background-color: #e4e9ed;" BorderPane.alignment="CENTER">
          <children>
@@ -28,750 +28,925 @@
       </HBox>
    </top>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #d24d57;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #2e3131;" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
                <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="-450.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_0_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="450.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_1_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="375.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_2_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="300.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_3_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="225.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_4_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="150.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_5_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="-75.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_6_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_7_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-75.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_8_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-150.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_9_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-225.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_0" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_1" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_2" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_3" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_4" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_5" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_6" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_7" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_8" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_9" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="hex_10_10" fitHeight="75.0" fitWidth="75.0" onMousePressed="#move" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/empty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/red_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-300.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image></ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/blue_border.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-300.0" top="-15.0" />
+                     </VBox.margin>
+                  </HBox>
                </children>
-               <VBox.margin>
-                  <Insets left="450.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="375.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="300.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="225.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="150.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets right="-75.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="-75.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="-150.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="-225.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="117.0" prefWidth="1294.0" spacing="20.0">
-               <children>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/empty.png" />
-                     </image>
-                  </ImageView>
-               </children>
-               <VBox.margin>
-                  <Insets left="-300.0" />
-               </VBox.margin>
-            </HBox>
+            </VBox>
          </children>
       </VBox>
    </center>
    <bottom>
-      <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="615.0" style="-fx-background-color: #2e3131;" text="Quit Game" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Button contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="31.0" prefWidth="1848.0" style="-fx-background-color: #ececec;" text="Quit Game" textFill="#2e3131" BorderPane.alignment="CENTER">
          <font>
             <Font name="Arial" size="15.0" />
          </font>

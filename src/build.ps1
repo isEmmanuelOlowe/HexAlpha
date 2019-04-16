@@ -9,6 +9,8 @@ function addToArray($item) {
 addToArray("hexalpha/")
 addToArray("hexalpha/controller/")
 addToArray("hexalpha/controller/splash/")
+addToArray("hexalpha/controller/game/")
+addToArray("hexalpha/engine/")
 # addToArray("hexalpha/controller/display/")
 # addToArray("hexalpha/engine/optimiser/")
 # addToArray("hexalpha/engine/resources/")
