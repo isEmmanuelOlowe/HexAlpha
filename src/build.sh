@@ -16,3 +16,5 @@ build hexalpha/controller/splash/
 build hexalpha/controller/game/
 build hexalpha/controller/winner/
 build hexalpha/engine/
+
+jar cvfm HexAlpha.jar manifest.txt hexalpha

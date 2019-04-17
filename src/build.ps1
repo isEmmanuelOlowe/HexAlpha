@@ -26,3 +26,4 @@ foreach($item in $directories){
 
 
 Write-Host "Building Complete"
+jar cvfm HexAlpha.jar manifest.txt hexalpha
