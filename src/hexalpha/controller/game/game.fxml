@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,7 +12,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hexalpha.controller.game.GameController">
    <top>
-      <HBox fillHeight="false" prefWidth="600.0" style="-fx-background-color: #e4e9ed;" BorderPane.alignment="CENTER">
+      <HBox fillHeight="false" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #e4e9ed;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="41.0" fitWidth="174.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -21,6 +22,11 @@
                   <Insets bottom="10.0" left="20.0" top="10.0" />
                </HBox.margin>
             </ImageView>
+            <Label fx:id="winner" alignment="CENTER" contentDisplay="CENTER" prefHeight="62.0" prefWidth="344.0" style="-fx-background-color: #f4d03f;" visible="false" HBox.hgrow="NEVER">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="18.0" />
+               </font>
+            </Label>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -889,7 +895,8 @@
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@img/blue_border.png" />
-                           </image></ImageView>
+                           </image>
+                        </ImageView>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@img/blue_border.png" />
@@ -946,7 +953,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="31.0" prefWidth="1848.0" style="-fx-background-color: #ececec;" text="Quit Game" textFill="#2e3131" BorderPane.alignment="CENTER">
+      <Button contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#quit" prefHeight="31.0" prefWidth="1848.0" style="-fx-background-color: #ececec;" text="Quit Game" textFill="#2e3131" BorderPane.alignment="CENTER">
          <font>
             <Font name="Arial" size="15.0" />
          </font>

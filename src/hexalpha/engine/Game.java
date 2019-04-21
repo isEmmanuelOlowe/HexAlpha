@@ -1,5 +1,7 @@
 package hexalpha.engine;
 
+import hexalpha.controller.game.GameController;
+import hexalpha.controller.Controller;
 /**
 * Describes a hex game.
 */
@@ -8,11 +10,13 @@ public class Game {
   private Hex winner;
   private Hex turn = Hex.BLUE;
   private Hex[][] gameBoard = new Hex[11][11];
+  private GameController controller;
 
   /**
   * Creates a new blank board.
   */
-  public Game() {
+  public Game(GameController gameController) {
+    controller = gameController;
     for (int i = 0; i < gameBoard.length; i++) {
       for (int j = 0; j < gameBoard[i].length; j++) {
         gameBoard[i][j] = Hex.EMPTY;
@@ -20,12 +24,16 @@ public class Game {
     }
   }
 
+  public Hex currentPlayer() {
+    return turn;
+  }
+  
   /**
   * Returns the current player whose turn it is and inverts the turn to the next player.
   *
   * @return the current player whose turn the game is
   */
-  public Hex currentPlayer() {
+  public Hex changePlayer() {
     Hex current;
     current = turn;
     if (turn == Hex.BLUE){
@@ -46,6 +54,28 @@ public class Game {
   */
   public void move(int x, int y, Hex player) {
       gameBoard[x][y] = player;
+      changePlayer();
+      controller.changePiece(player, Controller.find("#hex_" + y + "_" + x));
+      if (isComplete()) {
+        quit();
+      }
+  }
+
+  /**
+  * plays the game of hex
+  *
+  * @param x the x coordinate of move
+  * @param y the y coordinate of move
+  */
+  public void play(int x, int y) {
+
+    if (isValidMove(x, y)) {
+      move(x , y, currentPlayer());
+      if (isComplete()) {
+        changePlayer();
+        quit();
+      }
+    }
   }
 
   /**
@@ -55,6 +85,10 @@ public class Game {
   */
   public Hex[][] getBoard() {
     return gameBoard.clone();
+  }
+
+  public void setWinner(Hex player) {
+    this.winner = player;
   }
 
   /**
@@ -92,5 +126,12 @@ public class Game {
   */
   public Hex getWinner() {
     return winner;
+  }
+
+  /**
+  * Ends the game and runs to splash se
+  */
+  public void quit() {
+    controller.displayWinner(getWinner());
   }
 }

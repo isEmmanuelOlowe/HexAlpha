@@ -1,0 +1,96 @@
+package hexalpha.engine.challenger;
+
+import java.util.ArrayList;
+
+/**
+* Desceibes a location on a board
+*/
+public class Location {
+
+  private int x;
+  private int y;
+
+  /**
+  * Creates a location of piece on the board.
+  *
+  * @param x the x value of the position on the board
+  * @param y the y value of the position on the board
+  */
+  public Location(int x, int y) {
+
+  }
+
+  /**
+  * Gets the x coordinate of the piece on the board.
+  *
+  * @return the x coordinate
+  */
+  public int getX() {
+    return this.x;
+  }
+
+  /**
+  * Gets the y coordinate of the piece on the board
+  *
+  * @return the y coordinate
+  */
+  public int getY() {
+    return this.y;
+  }
+
+  /**
+  * Gets all the surround pieces on the hex board
+  *
+  * @return the adjacent locations to the current location
+  */
+  public ArrayList<Location> getAdjacent() {
+    int xValues = 0;
+    int yValues = 1;
+    int[][] locations = {{x + 1, x + 1, x, x, x - 1, x - 1},
+                        {y, y + 1, y + 1, y - 1, y, y - 1}};
+    ArrayList<Location> adjacent= new ArrayList<Location>();
+    for (int i = 0; i < locations[xValues].length; i++) {
+      int x = locations[xValues][i];
+      int y = locations[yValues][i];
+      if (x >= 0 && x <= 10 && y >= 0 && y <= 10) {
+        adjacent.add(new Location(x , y));
+      }
+    }
+    return adjacent;
+  }
+
+  /**
+  * Gets all the bridges that are possible to make from the current location.
+  *
+  * @return the location of possible bridges.
+  */
+  public ArrayList<Location> getBridges() {
+    int xValues = 0;
+    int yValues = 1;
+    int[][] locations = {{x - 1, x - 2, x + 1, x - 1, x + 2, x + 1},
+                        {y + 2, y + 1, y + 1, y - 1, y - 1, y - 2}};
+    ArrayList<Location> bridges = new ArrayList<Location>();
+    for (int i = 0; i < locations[xValues].length; i++) {
+      int x = locations[xValues][i];
+      int y = locations[yValues][i];
+      if (x >= 0 && x <= 10 && y >= 0 && y <= 10) {
+        bridges.add(new Location(x , y));
+      }
+    }
+    return bridges;
+  }
+
+  /**
+  * Determines if two locations are equal
+  *
+  * @param loc the location being compared to the current one.
+  * @return true if x and y coordinate are equal
+  */
+  public boolean equals(Location loc) {
+    if (this.x == loc.getX() && this.y == loc.getY()) {
+      return true;
+    }
+    return false;
+  }
+
+}
