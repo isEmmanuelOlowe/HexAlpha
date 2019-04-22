@@ -26,11 +26,15 @@ The GUI of the application was designed using JavaFX. This allowed for the creat
 
 #### Game Controller
 
-The pieces of the game board were designed in `Inkscape` and then exported to `.png` then to actually. 3 Hex pieces were designed (`RED`, `BLUE`, `EMPTY`) and when they are changed on the board only the link to the Image View is changed. Designing the board in the way it was allowed for the game to be more interactive making it easier for the user to actually input into the program and it also made it easier to test as the positions on the board can be seen visually. A look up was used to find the specific image view that corresponded to the location on the hex board.
+The pieces of the game board were designed in `Inkscape` and then exported to `.png`. 3 Hex pieces were designed (`RED`, `BLUE`, `EMPTY`) and when they are changed on the board only the link to the Image View is changed. Designing the board in the way it was allowed for the game to be more interactive making it easier for the user to actually input into the program and it also made it easier to test as the positions on the board can be seen visually. A look up was used to find the specific image view that corresponded to the location on the hex board.
+
+![](uml/Controller.png)
 
 ### Game Mechanics
 
 The board was stored as an `11 x 11` 2D array of `Enum`s. All empty pieces were donated by `EMPTY` .  When a player places a piece at a location the location is represented in the 2D array by the name of the player. This allowed for fast access of different locations on the board. Allowing for instant piece placement.  
+
+![](uml/GameMechanics.png)
 
 #### Determining the End of a Game
 
@@ -43,13 +47,17 @@ To increase the speed of this process and ensure the program does not get stuck 
 
 To determine if a game was complete as new class was created. This was implemented as its own class because it allows for all the code which relates to the completion of the game to be stored inside one location. It also allowed for the completion method to be reused by AIs. Also it decreases the size of the Game class. It also encapsulated variables which need to be set to default values every time it is wished to determine if the game is complete.
 
+![](uml/Complete.png)
+
 ### Network
 
-To allow the user to play with others over a network there was implementation of sockets. Since the game would have to be implemented as peer to peer. It would not be possible to create a lobby for users to find each other. So to allow for users to find each other there IP addresses have to be displayed. So it was decided to classes would be used for this (`Server`, `Client`). The server would be the person hosting the game displaying their IP address and the Client the person who connecting to the other persons IP address.  Communication between the Client and the Server followed the protocol specification provided by the practical.
+To allow the user to play with others over a network there was implementation of sockets. Since the game would have to be implemented as peer to peer. It would not be possible to create a lobby for users to find each other. So to allow for users to find each other there IP addresses have to be displayed. So it was decided two classes would be used for this (`Server`, `Client`). The server would be the person hosting the game, displaying their IP address and the Client the person who connects to the other persons IP address.  Communication between the Client and the Server followed the protocol specification provided by the practical.
 
-To allow the user to both use the GUI and interact with the client at the same time multithreading was used. Receiving of moves was always carried out on another thread so the user could quit while the game was still in progress.
+To allow the user to both use the GUI and interact with the client at the same time multi-threading was used. Receiving of moves was always carried out on another thread so the user could quit while the game was still in progress.
 
 The Network Game was implemented as a sub-class of the game class since if carried out all the same functionality, so the network class was thought of as extending the functionality of the initial class.
+
+![](uml/Network.png)
 
 ### AI: Minimax with Alpha-Beta Pruning
 
@@ -131,15 +139,35 @@ Upon selection being made on the menu screen a window should open asking the use
 
 The program successfully allows the game to be played over the network. 
 
+## Evaluation of AI's
+
+##### Random AI
+
+This AI picks a random cell on the HEX board. As expected this AI is very easy to beat as there is no logic applied to its moves.
+
+##### MinMax AI
+
+###### Example Game: 
+
+![](tests/MinMaxGames.png)
+
+The AI successfully places pieces conforming to a set logic. Possible moves are found then evaluated. The AI tries to create bridges between hex cells displaying a clear pattern. When evaluating possible moves, if two or more cells have the same evaluation then the program will pick a random cell out of the list of equally highly rated options. The first move that the MinMax AI makes is random. Although this AI is an improvement on the random AI, It is still extremely easy to beat, as shown in the screenshots above. The AI does not make any attempt to stop the player from making a straight line from one side to the other. 
+
+###### MinMax vs MinMax
+
+In this example the min max AI was put against its self with slight changes. One version has a depth of 1 and the other has a depth of 4. The results can be seen below: 
+
+
+
 ## Evaluation
 
 It was found that the addition of “hello” between server and client was useless as it can be known that the connection has been established without actually requiring communication between both parties but to maintain “compatibility” with the specification protocols the initial communication was maintained.
 
-The specification required that a program be produced that resembles the two-player board game Hex. The program had to allow a user to play against either: another human or an AI. The program also had to allow two of the same or two different AI's to play against one another. The game had to be playable over the network on two different computers. The computers had to connect to each other by use of the 'servers' local IP address. To fulfil the advanced deliverable the program had to contain a number of sophisticated AI's. As shown from the above evidence the program successfully fulfils all of these requirements. Thus showing that the program conforms to the advanced specification. 
+The specification required that a program be produced that resembles the two-player board game Hex. The program had to allow a user to play against either: another human or an AI. The program also had to allow two of the same or two different AI's to play against one another. The game had to be playable over the network on two different computers. The computers had to connect to each other by use of the 'servers' local IP address. AI's were to be implemented and evaluated. As you can see from the evidence above, the program produced contains what was listed in the specification. 
 
 ## Conclusion
 
-The program allows for human vs human and human vs AI games and contains a random AI. The program can be played over the network by use of sockets and uses the specified protocol, has a GUI which allows for the user to easily interact with the program and and contains multiple AI's. From this it can be concluded that the program conforms to the advanced specification. 
+The program allows for human vs human and human vs AI games and contains a random and MinMax AI. The program can be played over the network by use of sockets and uses the specified protocol, has a GUI which allows for the user to easily interact with the program and and contains multiple AI's. From this it can be concluded that the program conforms to the specification. 
 
 #### Difficulties
 
