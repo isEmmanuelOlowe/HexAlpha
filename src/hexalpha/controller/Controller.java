@@ -10,7 +10,6 @@ import javafx.scene.image.ImageView;
 import hexalpha.controller.splash.SplashController;
 import hexalpha.controller.game.GameController;
 import hexalpha.controller.lobby.LobbyController;
-import hexalpha.controller.winner.WinnerController;
 import hexalpha.controller.wait.WaitController;
 import hexalpha.engine.network.Server;
 import hexalpha.engine.network.Client;
@@ -125,7 +124,6 @@ public class Controller {
   */
   public static ImageView find(String item) {
     ImageView view = (ImageView) gameScene.lookup(item);
-    System.out.println(view);
     return view;
   }
 
@@ -161,26 +159,6 @@ public class Controller {
     }
     catch (IOException e) {
       e.printStackTrace();
-      System.out.println("FXML file is missing");
-    }
-  }
-
-  /**
-  * Changes to the winner screen notifying the user who won.
-  *
-  * @param winner the player who has won the game.
-  */
-  public static void changeToWinner(Hex winner) {
-    try {
-      FXMLLoader loader = new FXMLLoader(WinnerController.class.getResource("winner.fxml"));
-      Parent root = loader.load();
-      WinnerController winnerController = (WinnerController) loader.getController();
-      winnerController.initialize(winner);
-      //creates a new scene and displays it to the user.
-      stage.setScene(new Scene(root));
-      stage.show();
-    }
-    catch (IOException e) {
       System.out.println("FXML file is missing");
     }
   }

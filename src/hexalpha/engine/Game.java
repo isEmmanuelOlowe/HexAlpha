@@ -27,7 +27,7 @@ public class Game {
   public Hex currentPlayer() {
     return turn;
   }
-  
+
   /**
   * Returns the current player whose turn it is and inverts the turn to the next player.
   *
@@ -111,6 +111,13 @@ public class Game {
   * @return true if the game is complete
   */
   public boolean isComplete() {
+    Hex[][] board = getBoard();
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board.length; j++) {
+        System.out.print(board[i][j] + " ");
+      }
+      System.out.println();
+    }
     Complete complete = new Complete(getBoard());
     winner = complete.completedGame();
     if (winner != Hex.EMPTY) {

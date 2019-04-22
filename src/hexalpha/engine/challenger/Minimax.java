@@ -1,5 +1,6 @@
 package hexalpha.engine.challenger;
 
+import java.util.Random;
 import hexalpha.engine.Hex;
 import hexalpha.engine.Complete;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.HashSet;
 /**
 * Implementation of Minimax algorithm with alpha beta pruning as the AI.
 */
-public class Minimax {
+public class Minimax extends AI {
 
   Hex player;
   int maxDepth;
@@ -16,12 +17,12 @@ public class Minimax {
   int bestScore;
 
   /**
-  * creates a new Minimax AI along with the max depth to search to.
+  * Setupts Up the AI for usage
   *
   * @param player which role the AI is playing
   * @param maxDepth the maximum depth of moves to search to.
   */
-  public Minimax(Hex player, int maxDepth) {
+  public void setup(Hex player, int maxDepth) {
     this.player = player;
     this.maxDepth = maxDepth;
   }
@@ -51,13 +52,19 @@ public class Minimax {
   * @param player the current player taking a turn
   */
   public int evaluate(Position position, int depth, Integer alpha, Integer beta, Hex player) {
+    System.out.println("Alpha: " + alpha);
+    System.out.println("Beta: " + beta);
+    System.out.println("Depth: " + depth);
     Complete complete = new Complete(position.getBoard());
-    if (depth == 0 || complete.completedGame() != Hex.EMPTY) {
+    Hex state = complete.completedGame();
+    System.out.println(state);
+    if (depth == 0 || state != Hex.EMPTY) {
       return heustricScore(position);
     }
 
     if (player == Hex.BLUE) {
       //lowest possible value
+      System.out.println("current player is blue");
       Integer maxEvaluation = Integer.MIN_VALUE;
       for (Position move: getPossibleMoves(position, Hex.BLUE)) {
         int evaluation = evaluate(move, depth - 1, alpha, beta, Hex.RED);
@@ -73,6 +80,7 @@ public class Minimax {
       return maxEvaluation;
     }
     else {
+      System.out.println("Current player is red");
       Integer maxEvaluation = Integer.MAX_VALUE;
       for (Position move: getPossibleMoves(position, Hex.RED)) {
         int evaluation = evaluate(move, depth - 1, alpha, beta, Hex.BLUE);
@@ -134,7 +142,7 @@ public class Minimax {
         bestMove = location;
         bestScore = score;
       }
-
+      System.out.println("Best Move: " + bestMove.getLocation().getX() + ", " + bestMove.getLocation().getY());
     }
 
     /**
@@ -147,22 +155,29 @@ public class Minimax {
       HashSet<Location> validMove = new HashSet<Location>();
       Hex[][] board = position.getBoard();
       for (int i = 0; i < board.length; i++) {
-        for (int j = 0; j < board.length; i++) {
+        for (int j = 0; j < board.length; j++) {
           Hex piece = board[i][j];
           //only runs on non-empty pieces
           if (piece != Hex.EMPTY) {
+            System.out.println("There are empty pieces");
             //checks if the piece belongs to the player
             if (piece == player) {
+              System.out.println("This piece belongs to the player");
               Location location = new Location(i, j);
               for (Location adjacent: location.getAdjacent()) {
+                System.out.println("This piece has adjacent pieces");
                 if (board[adjacent.getX()][adjacent.getY()] == Hex.EMPTY) {
+                  System.out.println("adjacent location added");
                   validMove.add(adjacent);
                 }
               }
               for (Location bridge: location.getBridges()) {
+                System.out.println("This piece has bridges");
                 if (board[bridge.getX()][bridge.getY()] == Hex.EMPTY){
+                  System.out.println("This piece has bridges");
                   //checks that there exist pieces to actually connect the bridge
-                  if (board[bridge.getX()][location.getY()] == Hex.EMPTY && board[location.getY()][bridge.getY()] == Hex.EMPTY) {
+                  if (board[bridge.getX()][location.getY()] == Hex.EMPTY && board[location.getX()][bridge.getY()] == Hex.EMPTY) {
+                    System.out.println("bridge added");
                     validMove.add(bridge);
                   }
                 }
@@ -171,9 +186,31 @@ public class Minimax {
           }
         }
       }
+
+      System.out.println("valid moves : " + validMove.size());
+      if (validMove.size() == 0) {
+        validMove = randomMoves(position);
+      }
       return convertToPosition(board, validMove, player);
     }
 
+    public HashSet<Location> randomMoves(Position position) {
+      Random random = new Random();
+      Hex[][] board = position.getBoard();
+      HashSet<Location> moves = new HashSet<Location>();
+      final int boundary = 11;
+      int totalMoves = 0;
+      while (totalMoves < 10 ) {
+        int x = random.nextInt(boundary);
+        int y = random.nextInt(boundary);
+        if (board[x][y] == Hex.EMPTY) {
+          Location move = new Location(x, y);
+          moves.add(move);
+          totalMoves = moves.size();
+        }
+      }
+      return moves;
+    }
     /**
     * Converts a locations to positions.
     *
@@ -184,12 +221,22 @@ public class Minimax {
     public ArrayList<Position> convertToPosition(Hex[][] board, HashSet<Location> locations, Hex player) {
       ArrayList<Position> positions = new ArrayList<Position>();
       for (Location location: locations) {
-        Hex[][] newBoard = board.clone();
-        board[location.getX()][location.getY()] = player;
-        Position newPositon = new Position(board, location);
+        Hex[][] newBoard = cloneBoard(board);
+        newBoard[location.getX()][location.getY()] = player;
+        Position newPositon = new Position(newBoard, location);
         positions.add(newPositon);
       }
       return positions;
+    }
+
+    public Hex[][] cloneBoard(Hex[][] board) {
+      Hex[][] newBoard = new Hex[11][11];
+      for (int i = 0; i < board.length; i++) {
+        for (int j = 0; j < board.length; j++) {
+          newBoard[i][j] = board[i][j];
+        }
+      }
+      return newBoard;
     }
 
     /**

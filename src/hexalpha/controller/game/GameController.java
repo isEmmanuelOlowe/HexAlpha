@@ -2,6 +2,8 @@ package hexalpha.controller.game;
 
 import hexalpha.engine.Game;
 import hexalpha.engine.NetworkGame;
+import hexalpha.engine.AIGame;
+import hexalpha.engine.challenger.Minimax;
 import hexalpha.controller.Controller;
 import hexalpha.controller.game.GameController;
 import javafx.application.Platform;
@@ -68,6 +70,9 @@ public class GameController {
       switch(gameType) {
         case P_V_P:
           game = new Game(this);
+          break;
+        case P_V_AI:
+          game = new AIGame(this, new Minimax());
           break;
       }
     }

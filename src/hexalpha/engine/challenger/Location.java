@@ -17,7 +17,8 @@ public class Location {
   * @param y the y value of the position on the board
   */
   public Location(int x, int y) {
-
+    this.x = x;
+    this.y = y;
   }
 
   /**
@@ -50,9 +51,9 @@ public class Location {
                         {y, y + 1, y + 1, y - 1, y, y - 1}};
     ArrayList<Location> adjacent= new ArrayList<Location>();
     for (int i = 0; i < locations[xValues].length; i++) {
-      int x = locations[xValues][i];
-      int y = locations[yValues][i];
-      if (x >= 0 && x <= 10 && y >= 0 && y <= 10) {
+      int adjX = locations[xValues][i];
+      int adjY = locations[yValues][i];
+      if (adjX >= 0 && adjX <= 10 && adjY >= 0 && adjY <= 10) {
         adjacent.add(new Location(x , y));
       }
     }
@@ -67,14 +68,18 @@ public class Location {
   public ArrayList<Location> getBridges() {
     int xValues = 0;
     int yValues = 1;
-    int[][] locations = {{x - 1, x - 2, x + 1, x - 1, x + 2, x + 1},
-                        {y + 2, y + 1, y + 1, y - 1, y - 1, y - 2}};
+    int[][] locations = {{x + 1, x + 1, x + 1, x - 1, x + 2, x + 2},
+                        {y + 2, y - 2, y - 1, y + 1, y + 1, y - 1}};
     ArrayList<Location> bridges = new ArrayList<Location>();
+    System.out.println("base: " + x + ", " + y);
     for (int i = 0; i < locations[xValues].length; i++) {
-      int x = locations[xValues][i];
-      int y = locations[yValues][i];
-      if (x >= 0 && x <= 10 && y >= 0 && y <= 10) {
-        bridges.add(new Location(x , y));
+      System.out.println("bridges");
+      int bridgeX = locations[xValues][i];
+      System.out.println(bridgeX);
+      int bridgeY = locations[yValues][i];
+      System.out.println(bridgeY);
+      if (bridgeX >= 0 && bridgeX <= 10 && bridgeY >= 0 && bridgeY <= 10) {
+        bridges.add(new Location(bridgeX, bridgeY));
       }
     }
     return bridges;

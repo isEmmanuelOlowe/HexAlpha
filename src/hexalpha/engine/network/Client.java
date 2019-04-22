@@ -56,7 +56,6 @@ public class Client {
     catch (IOException e) {
       e.printStackTrace();
     }
-    System.out.println("Server says: " + message);
     return message;
   }
 
@@ -72,7 +71,7 @@ public class Client {
   public void send(String message) {
       out.println(message);
   }
-  
+
   /**
   * Closes the connection.
   */

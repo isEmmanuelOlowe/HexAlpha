@@ -55,6 +55,6 @@ public class SplashController {
     */
     @FXML
     private void watchAI() {
-      Controller.changeToGame(Hex.P_V_AI);
+      Controller.changeToGame(Hex.AI_V_AI);
     }
 }
