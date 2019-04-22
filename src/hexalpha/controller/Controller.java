@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import hexalpha.controller.splash.SplashController;
 import hexalpha.controller.game.GameController;
 import hexalpha.controller.lobby.LobbyController;
+import hexalpha.controller.playground.PlaygroundController;
 import hexalpha.controller.wait.WaitController;
 import hexalpha.engine.network.Server;
 import hexalpha.engine.network.Client;
@@ -66,6 +67,26 @@ public class Controller {
       //creates a new scene and displays it to the user.
       gameScene = new Scene(root);
       stage.setScene(gameScene);
+      stage.show();
+    }
+    catch (IOException e) {
+      System.out.println("FXML file is missing");
+    }
+  }
+
+  /**
+  * Changes the main stage to that of Watching AI Screen.
+  *
+  * @param gameType the game mode in which the user is trying to
+  */
+  public static void changeToPlayground(Hex gameType) {
+    try {
+      FXMLLoader loader = new FXMLLoader(PlaygroundController.class.getResource("playground.fxml"));
+      Parent root = loader.load();
+      PlaygroundController playController = (PlaygroundController) loader.getController();
+      playController.initialize(gameType);
+      //creates a new scene and displays it to the user.
+      stage.setScene(new Scene(root));
       stage.show();
     }
     catch (IOException e) {

@@ -96,7 +96,6 @@ public class PathFinder{
       if (board[brd.getX()][brd.getY()] == piece) {
         if (validBridge(brd, location)) {
           if (piece == Hex.RED){
-
             if (brd.getX() > location.getX()) {
               newLength += brd.getX() - location.getY();
             }

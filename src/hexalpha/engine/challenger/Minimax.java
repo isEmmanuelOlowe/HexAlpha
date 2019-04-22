@@ -11,10 +11,11 @@ import java.util.HashSet;
 */
 public class Minimax extends AI {
 
-  Hex player;
-  int maxDepth;
-  Position bestMove;
-  int bestScore;
+  private Hex player;
+  private int maxDepth;
+  private Position bestMove;
+  private int bestScore;
+  private String name = "Minimax";
 
   /**
   * Setupts Up the AI for usage
@@ -27,6 +28,9 @@ public class Minimax extends AI {
     this.maxDepth = maxDepth;
   }
 
+  public String getName() {
+    return name;
+  }
   /**
   * Allows the AI to take a turn
   *
@@ -38,7 +42,7 @@ public class Minimax extends AI {
     bestScore = Integer.MAX_VALUE;
     Integer alpha = Integer.MIN_VALUE;
     Integer beta = Integer.MAX_VALUE;
-    System.out.println("Score: " + evaluate(new Position(board, null), this.maxDepth, alpha, beta, this.player));
+    evaluate(new Position(board, null), this.maxDepth, alpha, beta, this.player);
     Location bestLocation = bestMove.getLocation();
     return new int[]{bestLocation.getX(), bestLocation.getY()};
   }
@@ -172,8 +176,6 @@ public class Minimax extends AI {
           }
         }
       }
-
-      //System.out.println("valid moves : " + validMove.size());
       if (validMove.size() == 0) {
         validMove = randomMoves(position);
       }
@@ -220,6 +222,7 @@ public class Minimax extends AI {
     * @param board the inital state of the board
     * @param locations where pieces can be put
     * @param player the player puting the pieces
+    * @return the possible positions the player can make
     */
     public ArrayList<Position> convertToPosition(Hex[][] board, HashSet<Location> locations, Hex player) {
       ArrayList<Position> positions = new ArrayList<Position>();
@@ -232,6 +235,12 @@ public class Minimax extends AI {
       return positions;
     }
 
+    /**
+    * Creates a new copy of a game board.
+    *
+    * @param board the board being copied
+    * @return the new copy
+    */
     public Hex[][] cloneBoard(Hex[][] board) {
       Hex[][] newBoard = new Hex[11][11];
       for (int i = 0; i < board.length; i++) {

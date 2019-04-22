@@ -23,7 +23,7 @@ public class AIGame extends Game {
     this.player = Hex.BLUE;
     this.opponent = Hex.RED;
     this.challenger = challenger;
-    this.challenger.setup(this.opponent, 3);
+    this.challenger.setup(this.opponent, 4);
   }
 
   /**
