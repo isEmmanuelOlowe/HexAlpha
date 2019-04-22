@@ -5,8 +5,8 @@ import org.junit.Test;
 
 public class MinimaxTests {
 
-  @tests
-  public class void Compiles() {
-    
+  @Test
+  public void Compiles() {
+
   }
 }
