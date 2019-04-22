@@ -55,8 +55,6 @@ The Network Game was implemented as a sub-class of the game class since if carri
 
 
 
-
-
 ## Testing
 
 ##### Test 1 - Quit
