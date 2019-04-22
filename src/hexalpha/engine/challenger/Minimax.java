@@ -35,6 +35,7 @@ public class Minimax extends AI {
   */
   public int[] obtainTurn(Hex[][] board) {
     bestMove = null;
+    bestScore = Integer.MAX_VALUE;
     Integer alpha = Integer.MIN_VALUE;
     Integer beta = Integer.MAX_VALUE;
     System.out.println("Score: " + evaluate(new Position(board, null), this.maxDepth, alpha, beta, this.player));
@@ -52,19 +53,13 @@ public class Minimax extends AI {
   * @param player the current player taking a turn
   */
   public int evaluate(Position position, int depth, Integer alpha, Integer beta, Hex player) {
-    System.out.println("Alpha: " + alpha);
-    System.out.println("Beta: " + beta);
-    System.out.println("Depth: " + depth);
     Complete complete = new Complete(position.getBoard());
-    Hex state = complete.completedGame();
-    System.out.println(state);
-    if (depth == 0 || state != Hex.EMPTY) {
+    if (depth == 0 || complete.completedGame() != Hex.EMPTY) {
       return heustricScore(position);
     }
 
     if (player == Hex.BLUE) {
       //lowest possible value
-      System.out.println("current player is blue");
       Integer maxEvaluation = Integer.MIN_VALUE;
       for (Position move: getPossibleMoves(position, Hex.BLUE)) {
         int evaluation = evaluate(move, depth - 1, alpha, beta, Hex.RED);
@@ -80,12 +75,11 @@ public class Minimax extends AI {
       return maxEvaluation;
     }
     else {
-      System.out.println("Current player is red");
       Integer maxEvaluation = Integer.MAX_VALUE;
       for (Position move: getPossibleMoves(position, Hex.RED)) {
         int evaluation = evaluate(move, depth - 1, alpha, beta, Hex.BLUE);
         maxEvaluation = new Integer(compare(maxEvaluation, evaluation, false));
-        alpha = new Integer(compare(alpha, evaluation, false));
+        beta = new Integer(compare(beta, evaluation, false));
         if (depth == this.maxDepth) {
           potentialOptimial(move, maxEvaluation);
         }
@@ -142,7 +136,6 @@ public class Minimax extends AI {
         bestMove = location;
         bestScore = score;
       }
-      System.out.println("Best Move: " + bestMove.getLocation().getX() + ", " + bestMove.getLocation().getY());
     }
 
     /**
@@ -159,25 +152,18 @@ public class Minimax extends AI {
           Hex piece = board[i][j];
           //only runs on non-empty pieces
           if (piece != Hex.EMPTY) {
-            System.out.println("There are empty pieces");
             //checks if the piece belongs to the player
             if (piece == player) {
-              System.out.println("This piece belongs to the player");
               Location location = new Location(i, j);
               for (Location adjacent: location.getAdjacent()) {
-                System.out.println("This piece has adjacent pieces");
                 if (board[adjacent.getX()][adjacent.getY()] == Hex.EMPTY) {
-                  System.out.println("adjacent location added");
                   validMove.add(adjacent);
                 }
               }
               for (Location bridge: location.getBridges()) {
-                System.out.println("This piece has bridges");
                 if (board[bridge.getX()][bridge.getY()] == Hex.EMPTY){
-                  System.out.println("This piece has bridges");
                   //checks that there exist pieces to actually connect the bridge
-                  if (board[bridge.getX()][location.getY()] == Hex.EMPTY && board[location.getX()][bridge.getY()] == Hex.EMPTY) {
-                    System.out.println("bridge added");
+                  if(validBridge(board, bridge, location)) {
                     validMove.add(bridge);
                   }
                 }
@@ -187,11 +173,28 @@ public class Minimax extends AI {
         }
       }
 
-      System.out.println("valid moves : " + validMove.size());
+      //System.out.println("valid moves : " + validMove.size());
       if (validMove.size() == 0) {
         validMove = randomMoves(position);
       }
       return convertToPosition(board, validMove, player);
+    }
+
+    /**
+    * Determines if a bridge is valid as there are 2 connectors leading to it
+    */
+    public boolean validBridge(Hex[][] board, Location bridge, Location piece) {
+      boolean valid = true;
+      for (Location adjB: bridge.getAdjacent()) {
+        for (Location adjP: piece.getAdjacent()) {
+          if (adjB.equals(adjP)) {
+            if (board[adjB.getX()][adjB.getY()] != Hex.EMPTY) {
+              valid = false;
+            }
+          }
+        }
+      }
+      return valid;
     }
 
     public HashSet<Location> randomMoves(Position position) {
@@ -245,7 +248,20 @@ public class Minimax extends AI {
     * @param position the position being evaluated
     */
     public int heustricScore(Position position) {
-      return 10;
+      Complete complete = new Complete(position.getBoard());
+      Hex state = complete.completedGame();
+      if (state == Hex.RED) {
+        return Integer.MIN_VALUE;
+      }
+      else if (state == Hex.RED) {
+        return Integer.MIN_VALUE;
+      }
+      else {
+        PathFinder path = new PathFinder(position.getBoard());
+        int redScore = path.longestPath(Hex.RED);
+        int blueScore = path.longestPath(Hex.BLUE);
+        return blueScore - redScore;
+      }
     }
 
 }

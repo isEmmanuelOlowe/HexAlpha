@@ -34,12 +34,13 @@ public class AIGame extends Game {
   */
   public void play(int x, int y) {
     if (isValidMove(x, y)) {
-      if (currentPlayer() == player) {
+      if (currentPlayer() == player && !isComplete()) {
         super.move(x, y, currentPlayer());
-        int[] move = challenger.obtainTurn(getBoard());
-        super.move(move[0], move[1], currentPlayer());
+        if (!isComplete()) {
+          int[] move = challenger.obtainTurn(getBoard());
+          super.move(move[0], move[1], currentPlayer());
+        }
       }
     }
-    System.out.println("one iteration");
   }
 }

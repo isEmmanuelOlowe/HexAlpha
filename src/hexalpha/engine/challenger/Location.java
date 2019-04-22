@@ -54,7 +54,7 @@ public class Location {
       int adjX = locations[xValues][i];
       int adjY = locations[yValues][i];
       if (adjX >= 0 && adjX <= 10 && adjY >= 0 && adjY <= 10) {
-        adjacent.add(new Location(x , y));
+        adjacent.add(new Location(adjX , adjY));
       }
     }
     return adjacent;
@@ -68,16 +68,13 @@ public class Location {
   public ArrayList<Location> getBridges() {
     int xValues = 0;
     int yValues = 1;
-    int[][] locations = {{x + 1, x + 1, x + 1, x - 1, x + 2, x + 2},
-                        {y + 2, y - 2, y - 1, y + 1, y + 1, y - 1}};
+    //description of adjacent pieces
+    int[][] locations = {{x - 1, x + 1, x + 1, x - 1, x + 2, x - 2},
+                        {y - 2, y + 2, y - 1, y + 1, y + 1, y - 1}};
     ArrayList<Location> bridges = new ArrayList<Location>();
-    System.out.println("base: " + x + ", " + y);
     for (int i = 0; i < locations[xValues].length; i++) {
-      System.out.println("bridges");
       int bridgeX = locations[xValues][i];
-      System.out.println(bridgeX);
       int bridgeY = locations[yValues][i];
-      System.out.println(bridgeY);
       if (bridgeX >= 0 && bridgeX <= 10 && bridgeY >= 0 && bridgeY <= 10) {
         bridges.add(new Location(bridgeX, bridgeY));
       }

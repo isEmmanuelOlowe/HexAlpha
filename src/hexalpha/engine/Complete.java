@@ -34,7 +34,7 @@ public class Complete {
   private boolean redPath() {
     searchedLocation = new ArrayList<int[]>();
     boolean exists = false;
-    for (int i = 0; i < max; i++) {
+    for (int i = 0; i < gameBoard.length; i++) {
       if (gameBoard[0][i] == Hex.RED) {
         if (end(new int[]{0, i}, Hex.RED)) {
           exists = true;
@@ -53,7 +53,7 @@ public class Complete {
   private boolean bluePath() {
     searchedLocation = new ArrayList<int[]>();
     boolean exists = false;
-    for (int i = 0; i < max; i++) {
+    for (int i = 0; i < gameBoard.length; i++) {
       if (gameBoard[i][0] == Hex.BLUE) {
         if (end(new int[]{i, 0}, Hex.BLUE)) {
           exists = true;
