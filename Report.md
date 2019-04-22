@@ -59,6 +59,12 @@ The Network Game was implemented as a sub-class of the game class since if carri
 
 ![](uml/Network.png)
 
+
+
+### Challenger
+
+![](uml/Challenger.png)
+
 #### Random ####
 
 A random AI was created which generates 2 random numbers and if the board position the AI puts a hex piece on that position.
