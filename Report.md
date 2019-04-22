@@ -59,9 +59,23 @@ The Network Game was implemented as a sub-class of the game class since if carri
 
 ![](uml/Network.png)
 
+#### Random ####
+
+A random AI was created which generates 2 random numbers and if the board position the AI puts a hex piece on that position.
+
 ### AI: Minimax with Alpha-Beta Pruning
 
+A more sophisticated AI was developed. This AI used minimax with alpha beta pruning. The minimax algorithm worked by getting all the possible moves and evaluating there score using the evaluation function and then evaluates all the opponents positions and chooses the one with the optimal evaluation of the possible moves given and so on and so forth this the maximum depth is reached then the move selected will be the one which leads to the optimal evaluation for the given player. Alpha-Beta pruning allow for possible paths which are irrelevant which cant be reached since the other player would not choose them to avoid the ban evaluation are just skipped. However it is to note that pruning in not guaranteed.  This algorithm assumes both players are playing using the same strategy which may be a fault in the AI design as it may perform poorly against other strategies.
 
+In this minimax algorithm Red is trying to minimise the evaluation where as Blue is trying to maximise the evaluation
+
+##### Possible Moves
+
+This algorithm does not define possible moves to be all positions on the board. Valid pieces on the board are adjacent pieces to pieces which are currently on there board or bridges where the two connecting adjacent pieces are empty. Only if there are not valid moves the AI then generates 10 random moves to evaluate.
+
+##### Evaluation Function
+
+The evaluation of a move was determined by taking the board and determining the longest path for each player from one of their sides to the other and the evaluation would be the length of the longest blue path substract the longest red path. An additional evaluation was added as well if a bridge was added to the board and the move was being evaluated the bridge would be considered  to be adding possibly 2 on the path. This was designed this way to encourage the AI to make bridges to increase the chance of completing a path.
 
 ## Testing
 
@@ -169,11 +183,14 @@ The program allows for human vs human and human vs AI games and contains a rando
 
 #### Difficulties
 
-- 
+* Longest Path proved to be difficult and very hard to evaluate if the correct length has been returned.
+* Minimax was very slow so testing it against another AI proved extremely time consuming.
+* JavaFX became very buggy due to the running of very intense process as the minimax algorithm had an extremely high time complexity.
 
 #### With More Time
 
 - More test cases could have been implemented to further prove that the program meets the specification
 
-
+* The are situations where are locked in a region that mean they cannot win. If more time was provided a method to determine when piece are in this region and have evaluation function return zero could have been implemented.
+* Speed improvements to AI.
 
