@@ -9,6 +9,7 @@ import hexalpha.engine.Hex;
 import hexalpha.engine.AIPlayground;
 import javafx.application.Platform;
 import hexalpha.engine.challenger.Minimax;
+import hexalpha.engine.challenger.RandomAI;
 import hexalpha.controller.Controller;
 public class PlaygroundController {
 
@@ -37,19 +38,23 @@ public class PlaygroundController {
     @FXML
     public void initialize(Hex type) {
       if (type == Hex.AI_V_AI) {
-        Minimax minimax1 = new Minimax();
-        ai1.setText("Blue is " + minimax1.getName());
-        Minimax minimax2 = new Minimax();
-        ai2.setText("Red is " + minimax1.getName());
-        play = new AIPlayground(this, minimax1, minimax2);
+        Minimax minimax = new Minimax();
+        ai1.setText("Blue is " + minimax.getName());
+        RandomAI random = new RandomAI();
+        ai2.setText("Red is " + random.getName());
+        play = new AIPlayground(this, minimax, random);
         play.reset();
       }
     }
 
     @FXML
-    void back() {
+    public void back() {
       active = false;
       Controller.changeToSplash();
+    }
+
+    public void inactive() {
+      active = false;
     }
 
     @FXML
@@ -57,6 +62,7 @@ public class PlaygroundController {
       play.run();
     }
     public void winrate(String message) {
+      active = true;
       Platform.runLater(new Runnable() {
          @Override
          public void run() {
@@ -78,11 +84,6 @@ public class PlaygroundController {
     }
 
     public void add(String message) {
-      Platform.runLater(new Runnable() {
-         @Override
-         public void run() {
-           display.getItems().add(message);
-         }
-       });
+      display.getItems().add(message);
     }
 }

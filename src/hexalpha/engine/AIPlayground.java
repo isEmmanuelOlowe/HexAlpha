@@ -3,7 +3,7 @@ package hexalpha.engine;
 import hexalpha.engine.challenger.AI;
 import hexalpha.controller.playground.PlaygroundController;
 
-public class AIPlayground extends Thread {
+public class AIPlayground {
 
   private AI competitor1;
   private AI competitor2;
@@ -21,7 +21,7 @@ public class AIPlayground extends Thread {
     this.competitor1 = competitor1;
     this.competitor2 = competitor2;
     this.competitor1.setup(Hex.BLUE, 2);
-    this.competitor2.setup(Hex.RED, 1);
+    this.competitor2.setup(Hex.RED, 11);
   }
 
   public void reset() {
@@ -47,10 +47,8 @@ public class AIPlayground extends Thread {
   /**
   * Runs the AIs against each other
   */
-  @Override
   public void run() {
     while(controller.getActive()) {
-      isComplete();
       if (turn == Hex.BLUE) {
         int[] move = competitor1.obtainTurn(gameBoard);
         move(move[0], move[1], turn);
@@ -92,6 +90,7 @@ public class AIPlayground extends Thread {
       else {
         controller.winrate(comp1Wins/comp2Wins + "%");
       }
+      controller.inactive();
       return true;
     }
     return false;
